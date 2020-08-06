@@ -9,23 +9,11 @@ var headers = {
 
 @Controller()
 export class AppController {
-  constructor(
-    private readonly http: HttpService,
-    private readonly appService: AppService,
-  ) {}
+  constructor(private http: HttpService, private appService: AppService) {}
 
   //Rendering default message
   @Get()
   getHello(): string {
     return this.appService.getHello();
-  }
-  //Adding external api to render data
-  @Get('api')
-  root() {
-    return this.http
-      .get('https://developers.zomato.com/api/v2.1/search?q=India&count=20', {
-        headers: headers,
-      })
-      .pipe(map(response => response.data));
   }
 }
