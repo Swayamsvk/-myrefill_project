@@ -5,9 +5,11 @@ import {
   Body,
   HttpService,
   Param,
+  UsePipes,
 } from '@nestjs/common';
 import { ApisService } from './apis.service';
 import { RateDTO } from './apis.dto';
+import { ValidationPipe } from 'src/shared/validation.pipe';
 
 @Controller('apis')
 export class ApisController {
@@ -21,6 +23,7 @@ export class ApisController {
 
   //Post information and rating
   @Post('post')
+  @UsePipes(new ValidationPipe())
   postApis(@Body() data: RateDTO) {
     return this.apisService.create(data);
   }

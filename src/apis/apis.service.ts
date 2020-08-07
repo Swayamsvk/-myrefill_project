@@ -1,4 +1,4 @@
-import { Injectable, HttpService } from '@nestjs/common';
+import { Injectable, HttpService, UsePipes } from '@nestjs/common';
 import { Repository } from 'typeorm';
 import { RateEntity } from './apis.entity';
 import { InjectRepository } from '@nestjs/typeorm';
@@ -7,7 +7,7 @@ import { map } from 'rxjs/operators';
 
 var headers = {
   Accept: 'application/json',
-  'user-key': 'this_is_zomato_key',
+  'user-key': 'zomato_key',
 };
 
 @Injectable()
