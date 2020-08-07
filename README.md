@@ -1,4 +1,5 @@
-<<<<<<< HEAD
-=======
+Database configs:-
 
->>>>>>> 5a469a8913ff0f82823025d97337c6397ee56340
+username: postgres,
+password: test123,
+database: rate
