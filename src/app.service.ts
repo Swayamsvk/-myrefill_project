@@ -3,6 +3,6 @@ import { Injectable } from '@nestjs/common';
 @Injectable()
 export class AppService {
   getHello(): string {
-    return 'Please Change pages to check other attributes';
+    return 'Please check different paths for the information required';
   }
 }

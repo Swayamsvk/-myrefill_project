@@ -7,7 +7,7 @@ import { map } from 'rxjs/operators';
 
 var headers = {
   Accept: 'application/json',
-  'user-key': 'ddda24f34833f606365e2497b74af2d5',
+  'user-key': 'this_is_zomato_key',
 };
 
 @Injectable()
@@ -25,11 +25,13 @@ export class ApisService {
       })
       .pipe(map(response => response.data));
   }
+
   async create(data: RateDTO) {
     const rate = await this.rateRepository.create(data);
     await this.rateRepository.save(rate);
     return rate;
   }
+
   getRev(apiId: string) {
     return this.http
       .get(`https://developers.zomato.com/api/v2.1/reviews?res_id=${apiId}`, {
